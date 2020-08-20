@@ -42,7 +42,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.comcarousel.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
 </head>
 
 <body>
@@ -224,6 +224,42 @@
                 </div>
             </div>
 
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <table class="table table-striped table-dark" id="records_table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <hr class="featurette-divider">
 
             <!-- /END THE FEATURETTES -->
@@ -238,12 +274,29 @@
             <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
     </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script>
-        window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+        window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>');
+
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://api-java-272303.appspot.com/vimeo/showCase',
+                type: 'GET',
+                data: {
+
+                },
+                success: function(response) {
+                    var trHTML = '';
+                    $.each(response, function(i, item) {
+                        trHTML += '<tr> <td> ' + item.rank + ' </td> <td > ' + item.content + ' </td> <td> ' + item.UID + ' </td> </tr>';
+                    });
+                    $('#records_table').append(trHTML);
+                }
+            });
+        });
     </script>
-    <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
+    <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf " crossorigin="anonymous ">
     </script>
 </body>
 
