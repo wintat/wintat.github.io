@@ -278,7 +278,10 @@
     </script>
     <script>
         window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js" />');
-
+    </script>
+    <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf " crossorigin="anonymous ">
+    </script>
+    <script>
         $(document).ready(function() {
             $.ajax({
                 url: 'https://api-java-272303.appspot.com/vimeo/showCase',
@@ -289,14 +292,12 @@
                 success: function(response) {
                     var trHTML = '';
                     $.each(response, function(i, item) {
-                        trHTML += '<tr> <td> ' + item.rank + ' </td> <td > ' + item.content + ' </td> <td> ' + item.UID + ' </td> </tr>';
+                        trHTML += '<tr><td> ' + item.rank + ' </td>        <td> ' + item.content + ' </td>        <td> ' + item.UID + ' </td>    </tr>';
                     });
                     $('#records_table').append(trHTML);
                 }
             });
         });
-    </script>
-    <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf " crossorigin="anonymous ">
     </script>
 </body>
 
