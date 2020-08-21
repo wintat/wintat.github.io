@@ -277,7 +277,7 @@
                 },
                 success: function(response) {
                     var trHTML = '';
-                    $.each(response.table, function(i, item) {
+                    $.each(response, function(i, item) {
                         trHTML += '<tr>' +
                             '<td> ' + item[i].name + ' </td>' +
                             ' <td> ' + item[i].releaseDate + ' </td>' +
