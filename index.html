@@ -238,24 +238,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -294,8 +277,12 @@
                 },
                 success: function(response) {
                     var trHTML = '';
-                    $.each(response, function(i, item) {
-                        trHTML += '<tr><td> ' + item.name + ' </td>        <td> ' + item.releaseDate + ' </td>        <td> ' + item.link + ' </td>    </tr>';
+                    $.each(response.table, function(i, item) {
+                        trHTML += '<tr>' +
+                            '<td> ' + item.name + ' </td>' +
+                            ' <td> ' + item.releaseDate + ' </td>' +
+                            ' <td></td>' +
+                            ' <td> ' + item.link + ' </td> </tr>';
                     });
                     $('#records_table').append(trHTML);
                 }
