@@ -294,7 +294,7 @@
                 success: function(response) {
                     var trHTML = '';
                     $.each(response, function(i, item) {
-                        trHTML += '<tr><td> ' + item.rank + ' </td>        <td> ' + item.content + ' </td>        <td> ' + item.UID + ' </td>    </tr>';
+                        trHTML += '<tr><td> ' + item.name + ' </td>        <td> ' + item.releaseDate + ' </td>        <td> ' + item.link + ' </td>    </tr>';
                     });
                     $('#records_table').append(trHTML);
                 }
