@@ -279,10 +279,10 @@
                     var trHTML = '';
                     $.each(response, function(i, item) {
                         trHTML += '<tr>' +
-                            '<td> ' + item[i].name + ' </td>' +
-                            ' <td> ' + item[i].releaseDate + ' </td>' +
+                            '<td> ' + item.name + ' </td>' +
+                            ' <td> ' + item.releaseDate + ' </td>' +
                             ' <td></td>' +
-                            ' <td> ' + item[i].link + ' </td>' +
+                            ' <td> ' + item.link + ' </td>' +
                             '</tr>';
                     });
                     $('#records_table').append(trHTML);
